@@ -1874,7 +1874,7 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  body[data-area="ebetsu"] .locality-numbers {
+  body[data-area="eniwa"] .locality-numbers {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1905,7 +1905,7 @@ a {
     border-bottom: 1px solid var(--line-soft);
   }
 
-  body[data-area="ebetsu"] .locality-numbers div:first-child {
+  body[data-area="eniwa"] .locality-numbers div:first-child {
     grid-column: 1 / -1;
     border-right: 0;
     border-bottom: 1px solid var(--line-soft);
@@ -1932,7 +1932,7 @@ a {
     font-size: clamp(24px, 7.4vw, 30px);
   }
 
-  body[data-area="ebetsu"] .locality-numbers dd {
+  body[data-area="eniwa"] .locality-numbers dd {
     font-size: clamp(28px, 8vw, 34px);
   }
 
