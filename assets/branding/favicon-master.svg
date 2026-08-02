@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">WindWoods W letter-mark</title>
+  <desc id="desc">A bold gold W on a near-black square background.</desc>
+  <defs>
+    <linearGradient id="gold-gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f1dc8a"/>
+      <stop offset="0.38" stop-color="#d3b965"/>
+      <stop offset="0.72" stop-color="#c29d4d"/>
+      <stop offset="1" stop-color="#aa8338"/>
+    </linearGradient>
+  </defs>
+  <rect id="background" x="0" y="0" width="1024" height="1024" fill="#050505"/>
+  <path id="mark" fill="url(#gold-gradient)" d="M112 222h162l112 402 66-224h120l66 224 112-402h162L704 802H578l-66-194-66 194H320L112 222Z"/>
+</svg>
