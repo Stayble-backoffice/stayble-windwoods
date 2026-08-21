@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
@@ -8,7 +8,7 @@
   <title>北海道の民泊清掃代行｜リネンサプライ付き｜WindWoods（株式会社Stayble）</title>
   <meta name="description" content="WindWoodsは株式会社Staybleが運営する民泊清掃代行サービスです。リネン、消耗品、ゴミ回収、報告管理を一括提供し、札幌・千歳・小樽・北広島・恵庭に対応します。">
   <meta name="robots" content="index,follow">
-  <meta name="google-site-verification" content="_auHJAM1k-ebnW4tAFM_87XNvqdSuXg91JcpRe6snMU" />
+  <meta name="google-site-verification" content="_auHJAM1k-ebnW4tAFM_87XNvqdSuXg91JcpRe6snMU">
   <link rel="canonical" href="https://windwoods-stayble.com/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ja_JP">
@@ -16,13 +16,15 @@
   <meta property="og:title" content="北海道の民泊清掃代行｜リネンサプライ付き｜WindWoods">
   <meta property="og:description" content="年間約15,000件の清掃実績を母体に、北海道の宿泊を支える民泊清掃代行サービス。">
   <meta property="og:url" content="https://windwoods-stayble.com/">
-  <meta property="og:image" content="https://windwoods-stayble.com/assets/og-image.png">
+  <meta property="og:image" content="https://windwoods-stayble.com/assets/og/home.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="北海道の民泊清掃代行 WindWoods。札幌・千歳・小樽・北広島・恵庭に対応">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="北海道の民泊清掃代行｜リネンサプライ付き｜WindWoods">
   <meta name="twitter:description" content="リネン、消耗品、ゴミ回収、報告管理まで一括提供。札幌・千歳・小樽・北広島・恵庭に対応。">
-  <meta name="twitter:image" content="https://windwoods-stayble.com/assets/og-image.png">
+  <meta name="twitter:image" content="https://windwoods-stayble.com/assets/og/home.png">
+  <meta name="twitter:image:alt" content="北海道の民泊清掃代行 WindWoods。札幌・千歳・小樽・北広島・恵庭に対応">
   <!-- /SITE SEO: HOME -->
 
   <!-- COMMON ASSETS -->
@@ -31,54 +33,90 @@
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" type="image/webp" href="/assets/web/toppage-960.webp" media="(max-width: 520px)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="/assets/web/toppage-1600.webp" media="(min-width: 521px)" fetchpriority="high">
   <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/attribution.js" defer></script>
   <!-- /COMMON ASSETS -->
 
   <!-- STRUCTURED DATA: HOME -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://windwoods-stayble.com/#organization",
-    "name": "株式会社Stayble",
-    "alternateName": "WindWoods",
-    "url": "https://windwoods-stayble.com/",
-    "logo": "https://windwoods-stayble.com/assets/logo-mark.png",
-    "image": "https://windwoods-stayble.com/assets/og-image.png",
-    "email": "backoffice@windwoods-stayble.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "札幌市中央区",
-      "streetAddress": "南5条西15丁目2-3-503",
-      "addressRegion": "北海道",
-      "addressCountry": "JP"
-    },
-    "areaServed": [
-      { "@type": "City", "name": "札幌市" },
-      { "@type": "City", "name": "千歳市" },
-      { "@type": "City", "name": "小樽市" },
-      { "@type": "City", "name": "北広島市" },
-      { "@type": "City", "name": "恵庭市" }
-    ],
-    "sameAs": [
-      "https://www.stayble.jp"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://windwoods-stayble.com/#organization",
+        "name": "株式会社Stayble",
+        "alternateName": "WindWoods",
+        "url": "https://windwoods-stayble.com/",
+        "logo": { "@type": "ImageObject", "url": "https://windwoods-stayble.com/web-app-manifest-512x512.png", "width": 512, "height": 512 },
+        "image": "https://windwoods-stayble.com/assets/og/home.png",
+        "email": "backoffice@windwoods-stayble.com",
+        "foundingDate": "2025-04-11",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "札幌市中央区",
+          "streetAddress": "南5条西15丁目2-3-503",
+          "addressRegion": "北海道",
+          "addressCountry": "JP"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "札幌市" },
+          { "@type": "City", "name": "千歳市" },
+          { "@type": "City", "name": "小樽市" },
+          { "@type": "City", "name": "北広島市" },
+          { "@type": "City", "name": "恵庭市" }
+        ],
+        "sameAs": ["https://www.stayble.jp/", "https://minpaku.stayble.jp/company/"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://windwoods-stayble.com/#website",
+        "name": "WindWoods",
+        "alternateName": "株式会社Stayble",
+        "url": "https://windwoods-stayble.com/",
+        "inLanguage": "ja-JP",
+        "publisher": { "@id": "https://windwoods-stayble.com/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://windwoods-stayble.com/#webpage",
+        "url": "https://windwoods-stayble.com/",
+        "name": "北海道の民泊清掃代行｜リネンサプライ付き｜WindWoods（株式会社Stayble）",
+        "description": "WindWoodsは株式会社Staybleが運営する民泊清掃代行サービスです。リネン、消耗品、ゴミ回収、報告管理を一括提供し、札幌・千歳・小樽・北広島・恵庭に対応します。",
+        "isPartOf": { "@id": "https://windwoods-stayble.com/#website" },
+        "about": { "@id": "https://windwoods-stayble.com/#service" },
+        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://windwoods-stayble.com/assets/og/home.png", "width": 1200, "height": 630 },
+        "dateModified": "2026-08-21",
+        "inLanguage": "ja-JP"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://windwoods-stayble.com/#service",
+        "name": "WindWoods 民泊・バケーションレンタル清掃管理サービス",
+        "serviceType": "民泊・バケーションレンタル清掃管理サービス",
+        "provider": { "@id": "https://windwoods-stayble.com/#organization" },
+        "areaServed": [
+          { "@type": "City", "name": "札幌市" },
+          { "@type": "City", "name": "千歳市" },
+          { "@type": "City", "name": "小樽市" },
+          { "@type": "City", "name": "北広島市" },
+          { "@type": "City", "name": "恵庭市" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "民泊清掃の参考料金（税込）",
+          "itemListElement": [
+            { "@type": "Offer", "name": "1R 民泊清掃", "price": "4200", "priceCurrency": "JPY" },
+            { "@type": "Offer", "name": "1LDK 民泊清掃", "price": "4800", "priceCurrency": "JPY" },
+            { "@type": "Offer", "name": "2LDK 民泊清掃", "price": "5800", "priceCurrency": "JPY" },
+            { "@type": "Offer", "name": "3LDK 民泊清掃", "price": "6800", "priceCurrency": "JPY" },
+            { "@type": "Offer", "name": "戸建て 民泊清掃", "price": "9400", "priceCurrency": "JPY" }
+          ]
+        }
+      }
     ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://windwoods-stayble.com/#website",
-    "name": "WindWoods",
-    "alternateName": "株式会社Stayble",
-    "url": "https://windwoods-stayble.com/",
-    "publisher": {
-      "@id": "https://windwoods-stayble.com/#organization"
-    }
   }
   </script>
   <!-- /STRUCTURED DATA: HOME -->
@@ -86,7 +124,7 @@
 <body data-page="home">
   <header class="site-header" aria-label="サイトヘッダー">
     <a class="brand" href="#top" aria-label="WindWoods トップページ上部">
-      <img src="/assets/logo-mark.png" alt="WindWoods">
+      <img src="/favicon.svg" alt="WindWoods" width="52" height="52">
     </a>
     <p class="header-proof"><span>ご契約</span><strong>約240</strong><span>室</span></p>
     <p class="home-header-note">HOKKAIDO AREA SELECT</p>
@@ -98,11 +136,11 @@
         <div class="home-hero-copy">
           <p class="home-eyebrow">WindWoods / Stayble</p>
           <p class="hero-small">北海道の宿泊を支える<br>“リネンサプライ”付き</p>
-          <h1><span>宿泊清掃を、</span><span>地域で選ぶ。</span></h1>
+          <h1><span>北海道の民泊清掃を、</span><span>地域で選ぶ。</span></h1>
           <p class="home-hero-lead">民泊清掃代行・リネン供給・消耗品補充まで一括対応。</p>
           <a class="button" href="#areas">対応エリアを選ぶ</a>
         </div>
-        <dl class="home-hero-stats" aria-label="会社全体の実績">
+        <dl class="home-hero-stats" role="group" aria-label="会社全体の実績">
           <div>
             <dt>年間清掃件数</dt>
             <dd><small>年間約</small>15,000<span>件</span></dd>
@@ -125,7 +163,7 @@
           <p class="section-kicker">Area</p>
           <h2>対応エリアを選ぶ。</h2>
         </div>
-        <div class="home-area-grid" aria-label="対応エリア一覧">
+        <nav class="home-area-grid" aria-label="地域別ページ">
           <a class="home-area-item" href="/sapporo/">
             <span>01 / Sapporo</span>
             <strong>札幌</strong>
@@ -151,7 +189,7 @@
             <strong>恵庭</strong>
             <p>ファイターズファーム施設の内定で注目される西島松・恵み野周辺。</p>
           </a>
-        </div>
+        </nav>
       </div>
     </section>
 
@@ -165,7 +203,7 @@
           <p>1部屋1名で責任の所在を明確にし、個人単位で品質を追跡します。</p>
           <p>抜き打ちチェッカー、強大なマニュアル、定型化された報告写真により、清掃品質を見える状態で管理します。</p>
         </div>
-        <div class="home-strength-rail" aria-label="WindWoodsの強み">
+        <div class="home-strength-rail" role="group" aria-label="WindWoodsの強み">
           <span>個人制</span>
           <span>品質追跡</span>
           <span>チェッカー</span>
@@ -202,12 +240,27 @@
         </div>
       </div>
     </section>
+
+    <section class="section faq" id="faq">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="section-kicker">FAQ</p>
+          <h2>北海道の民泊清掃でよくあるご質問</h2>
+        </div>
+        <div class="faq-grid">
+          <details class="faq-item"><summary>WindWoodsは北海道のどの地域に対応していますか？</summary><div class="faq-answer"><p>札幌市、千歳市、小樽市、北広島市、恵庭市に対応しています。地域ごとの対応地区や背景は、上の対応エリアから各ページをご確認ください。</p></div></details>
+          <details class="faq-item"><summary>民泊清掃と一緒に何を任せられますか？</summary><div class="faq-answer"><p>客室清掃に加え、リネンサプライ、消耗品の発注・在庫管理・補充、ゴミ回収、定型写真による報告管理を一括で提供します。</p></div></details>
+          <details class="faq-item"><summary>民泊清掃の料金はいくらからですか？</summary><div class="faq-answer"><p>基本料金は1Rが1回4,200円（税込）からです。間取り、ベッド数、最大収容人数、消耗品・リネン・ゴミ回収の利用条件で変わります。10名以上は要見積もりです。</p></div></details>
+          <details class="faq-item"><summary>リネンを購入・保管せずに利用できますか？</summary><div class="faq-answer"><p>はい。初期費用・固定費なしのリースで、物件に合わせて都度集配型とストック型を使い分けます。各地域ページの概算フォームでリネンサプライ利用時の目安を確認できます。</p></div></details>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer" id="company">
     <div class="section-inner footer-grid">
       <div>
-        <img class="footer-logo" src="/assets/logo-full.png" alt="WindWoods 株式会社Stayble">
+        <img class="footer-logo" src="/assets/logo-full.png" alt="WindWoods 株式会社Stayble" width="1000" height="1000" loading="lazy" decoding="async">
         <p>WindWoodsは、株式会社Staybleの民泊・バケーションレンタル清掃管理サービスです。</p>
       </div>
       <div>
@@ -219,14 +272,14 @@
       </div>
       <div>
         <p><strong>対応エリア</strong></p>
-        <div class="footer-area-links" aria-label="対応エリア一覧">
+        <nav class="footer-area-links" aria-label="フッターの対応エリア">
           <span aria-current="page">WindWoodsトップ</span>
           <a href="/sapporo/">札幌の民泊清掃はこちら</a>
           <a href="/chitose/">千歳の民泊清掃はこちら</a>
           <a href="/otaru/">小樽の民泊清掃はこちら</a>
           <a href="/kitahiroshima/">北広島の民泊清掃はこちら</a>
           <a href="/eniwa/">恵庭の民泊清掃はこちら</a>
-        </div>
+        </nav>
       </div>
       <div>
         <p><strong>関連事業</strong></p>

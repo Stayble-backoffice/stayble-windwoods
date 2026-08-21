@@ -295,6 +295,13 @@
     submitData.set("estimate_note", lastEstimate.note);
   }
 
+  function appendAttributionFields(submitData) {
+    const attribution = root.WindWoodsAttribution?.get?.() || {};
+    Object.entries(attribution).forEach(([key, value]) => {
+      submitData.set(key, String(value || ""));
+    });
+  }
+
   function buildEmailMessage(submitData) {
     if (!lastEstimate || !lastInput) {
       return "";
@@ -341,7 +348,14 @@
       linenCounts,
       "",
       "【ご要望・ご質問】",
-      getFieldValue(submitData, "request_message")
+      getFieldValue(submitData, "request_message"),
+      "",
+      "【流入計測】",
+      `流入元: ${getFieldValue(submitData, "traffic_source")}`,
+      `初回ランディング: ${getFieldValue(submitData, "first_landing_page")}`,
+      `初回エリア: ${getFieldValue(submitData, "first_area")}`,
+      `参照元: ${getFieldValue(submitData, "first_referrer")}`,
+      `UTM source / medium / campaign: ${getFieldValue(submitData, "utm_source", "-")} / ${getFieldValue(submitData, "utm_medium", "-")} / ${getFieldValue(submitData, "utm_campaign", "-")}`
     ].join("\n");
   }
 
@@ -361,12 +375,20 @@
       timerexInitialized = true;
     };
 
-    initialize();
-
-    const script = document.getElementById("timerex_embed");
-    if (!timerexInitialized && script) {
-      script.addEventListener("load", initialize, { once: true });
+    if (typeof root.TimerexCalendar === "function") {
+      initialize();
+      return;
     }
+
+    let script = document.getElementById("timerex_embed");
+    if (!script) {
+      script = document.createElement("script");
+      script.id = "timerex_embed";
+      script.src = "https://asset.timerex.net/js/embed.js";
+      script.async = true;
+      document.body.append(script);
+    }
+    script.addEventListener("load", initialize, { once: true });
   }
 
   function showCompletion(formData) {
@@ -404,6 +426,7 @@
     submitData.set("booking_type_label", bookingType);
     submitData.set("email", submitData.get("email") || "");
     appendEstimateFields(submitData);
+    appendAttributionFields(submitData);
     normalizeLinenCounts(submitData);
     submitData.set("message", buildEmailMessage(submitData));
 

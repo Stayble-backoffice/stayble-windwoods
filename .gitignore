@@ -1,3 +1,4 @@
 tmp/
+.audit/
 .DS_Store
 Thumbs.db
