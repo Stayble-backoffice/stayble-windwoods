@@ -617,6 +617,80 @@ a {
   line-height: 1.25;
 }
 
+.license-proof {
+  margin-top: clamp(30px, 5vw, 54px);
+  border: 1px solid rgba(201, 164, 92, 0.46);
+  background:
+    linear-gradient(135deg, rgba(201, 164, 92, 0.12), rgba(201, 164, 92, 0.025) 48%),
+    #0d0d0d;
+}
+
+.license-proof--desktop {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.34fr) minmax(0, 1fr);
+}
+
+.license-proof--desktop .license-proof-label {
+  display: grid;
+  align-content: center;
+  gap: 12px;
+  min-height: 210px;
+  padding: 30px;
+  border-right: 1px solid rgba(201, 164, 92, 0.34);
+  color: var(--gold-soft);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.license-proof--desktop .license-proof-label strong {
+  color: var(--gold);
+  font-family: var(--font-sans);
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+}
+
+.license-proof-body {
+  align-self: center;
+  padding: clamp(30px, 5vw, 52px);
+}
+
+.license-proof-body h3 {
+  margin: 0 0 18px;
+  color: #fff;
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.license-proof-body p {
+  max-width: 860px;
+  margin: 0;
+  color: #d5d5d5;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.9;
+}
+
+.license-proof-body .license-proof-number {
+  margin-top: 18px;
+  color: var(--gold-soft);
+  font-size: 13px;
+  letter-spacing: 0.025em;
+}
+
+.license-proof--mobile {
+  display: none;
+}
+
+.home-strength .license-proof {
+  grid-column: 1 / -1;
+}
+
 .operation-compare {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
@@ -1299,6 +1373,51 @@ a {
   font-weight: 900;
 }
 
+.company-overview {
+  background: #080808;
+  border-top: 1px solid var(--line-soft);
+}
+
+.company-facts-desktop {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.32fr) minmax(0, 1fr);
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+
+.company-facts-desktop div {
+  display: contents;
+}
+
+.company-facts-desktop dt,
+.company-facts-desktop dd {
+  margin: 0;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.company-facts-desktop dt {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.company-facts-desktop dd {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.company-facts-desktop a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.company-facts-mobile {
+  display: none;
+}
+
 .site-footer {
   padding: 48px 0;
   background: #000;
@@ -1873,6 +1992,130 @@ a {
   .section-catch::after {
     right: auto;
     width: min(100%, 308px);
+  }
+
+  .license-proof--desktop {
+    display: none;
+  }
+
+  .license-proof--mobile {
+    display: block;
+    margin-top: 26px;
+    padding: 22px 18px 20px;
+    border-left: 4px solid var(--gold);
+    background: #111;
+  }
+
+  .license-proof--mobile .license-proof-label {
+    display: inline-block;
+    margin: 0 0 14px;
+    padding: 5px 8px;
+    background: var(--gold);
+    color: #050505;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+  }
+
+  .license-proof--mobile h3 {
+    margin: 0 0 12px;
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.35;
+  }
+
+  .license-proof--mobile p {
+    margin: 0;
+    color: #d5d5d5;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.85;
+  }
+
+  .license-proof--mobile .license-proof-number {
+    margin-top: 14px;
+    color: var(--gold-soft);
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  .company-facts-desktop {
+    display: none;
+  }
+
+  .company-facts-mobile {
+    display: grid;
+    gap: 14px;
+  }
+
+  .company-mobile-license {
+    padding: 20px 18px;
+    border: 1px solid rgba(201, 164, 92, 0.5);
+    background: rgba(201, 164, 92, 0.08);
+  }
+
+  .company-mobile-license p {
+    margin: 0;
+    color: var(--gold-soft);
+    font-size: 11px;
+    font-weight: 900;
+  }
+
+  .company-mobile-license strong {
+    display: block;
+    margin: 8px 0 10px;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+
+  .company-mobile-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    margin: 0;
+    background: var(--line-soft);
+  }
+
+  .company-mobile-meta div {
+    min-width: 0;
+    padding: 15px 14px;
+    background: #0d0d0d;
+  }
+
+  .company-mobile-meta .is-wide {
+    grid-column: 1 / -1;
+  }
+
+  .company-mobile-meta dt {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 900;
+  }
+
+  .company-mobile-meta dd {
+    margin: 5px 0 0;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+
+  .company-mobile-contact {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .company-mobile-contact a {
+    display: grid;
+    place-items: center;
+    min-height: 48px;
+    border: 1px solid var(--gold);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 900;
   }
 
   .mobile-break {

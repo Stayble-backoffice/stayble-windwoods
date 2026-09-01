@@ -1,4 +1,8 @@
 (function () {
+  const GOOGLE_ADS_CONVERSION_ID = "AW-18418113981";
+  // Google広告で発行後、ラベル文字列だけを設定する（例: "AbCdEfGhIjkLmNoP"）。
+  const GOOGLE_ADS_CONVERSION_LABEL = "";
+
   const layouts = {
     "1R": { label: "1R", base: 4200, includedBeds: 2 },
     "1LDK": { label: "1LDK", base: 4800, includedBeds: 4 },
@@ -407,6 +411,16 @@
     completionPanel.hidden = false;
   }
 
+  function trackGoogleAdsConversion() {
+    if (!GOOGLE_ADS_CONVERSION_LABEL || typeof window.gtag !== "function") {
+      return;
+    }
+
+    window.gtag("event", "conversion", {
+      send_to: `${GOOGLE_ADS_CONVERSION_ID}/${GOOGLE_ADS_CONVERSION_LABEL}`
+    });
+  }
+
   async function submitBooking(event) {
     event.preventDefault();
 
@@ -462,6 +476,7 @@
         bookingSubmit.textContent = "送信済み";
       }
 
+      trackGoogleAdsConversion();
       showTimerex();
       showCompletion(submitData);
       timerexSection?.scrollIntoView({ behavior: "smooth", block: "start" });

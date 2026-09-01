@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18418113981"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18418113981');
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -45,14 +54,16 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": "LocalBusiness",
         "@id": "https://windwoods-stayble.com/#organization",
-        "name": "株式会社Stayble",
-        "alternateName": "WindWoods",
+        "name": "WindWoods",
+        "legalName": "株式会社Stayble",
+        "alternateName": "WIND WOODS",
         "url": "https://windwoods-stayble.com/",
         "logo": { "@type": "ImageObject", "url": "https://windwoods-stayble.com/web-app-manifest-512x512.png", "width": 512, "height": 512 },
         "image": "https://windwoods-stayble.com/assets/og/home.png",
         "email": "backoffice@windwoods-stayble.com",
+        "telephone": "090-9433-4441",
         "foundingDate": "2025-04-11",
         "address": {
           "@type": "PostalAddress",
@@ -68,6 +79,7 @@
           { "@type": "City", "name": "北広島市" },
           { "@type": "City", "name": "恵庭市" }
         ],
+        "priceRange": "¥4,200〜（税込）",
         "sameAs": ["https://www.stayble.jp/", "https://minpaku.stayble.jp/company/"]
       },
       {
@@ -88,7 +100,7 @@
         "isPartOf": { "@id": "https://windwoods-stayble.com/#website" },
         "about": { "@id": "https://windwoods-stayble.com/#service" },
         "primaryImageOfPage": { "@type": "ImageObject", "url": "https://windwoods-stayble.com/assets/og/home.png", "width": 1200, "height": 630 },
-        "dateModified": "2026-08-21",
+        "dateModified": "2026-09-01",
         "inLanguage": "ja-JP"
       },
       {
@@ -212,6 +224,20 @@
           <span>ゴミ回収</span>
           <span>報告管理</span>
         </div>
+        <aside class="license-proof license-proof--desktop" aria-labelledby="home-license-title">
+          <div class="license-proof-label"><strong>登録</strong>Registered operator</div>
+          <div class="license-proof-body">
+            <h3 id="home-license-title">国土交通大臣登録の住宅宿泊管理業者が運営</h3>
+            <p>WindWoodsを運営する株式会社Staybleは、住宅宿泊事業法に基づく住宅宿泊管理業者として国土交通大臣の登録を受けています。清掃の受託にとどまらず、住宅宿泊管理業者としての基準を満たした体制で運営しています。</p>
+            <p class="license-proof-number">登録番号：国土交通大臣（01）第F06325号</p>
+          </div>
+        </aside>
+        <aside class="license-proof license-proof--mobile" aria-labelledby="home-license-title-mobile">
+          <p class="license-proof-label">国土交通大臣登録</p>
+          <h3 id="home-license-title-mobile">住宅宿泊管理業者が運営</h3>
+          <p>株式会社Staybleは、住宅宿泊事業法に基づく登録を受けた住宅宿泊管理業者です。管理業者としての基準を満たした体制でWindWoodsを運営しています。</p>
+          <p class="license-proof-number">国土交通大臣（01）第F06325号</p>
+        </aside>
       </div>
     </section>
 
@@ -255,9 +281,43 @@
         </div>
       </div>
     </section>
+
+    <section class="section company-overview" id="company">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="section-kicker">Company</p>
+          <h2>会社概要</h2>
+        </div>
+        <dl class="company-facts-desktop">
+          <div><dt>運営会社</dt><dd>株式会社Stayble</dd></div>
+          <div><dt>代表者</dt><dd>風林 匠真</dd></div>
+          <div><dt>設立</dt><dd>2025年4月11日</dd></div>
+          <div><dt>本社所在地</dt><dd>札幌市中央区南5条西15丁目2-3-503（本社移転予定）</dd></div>
+          <div><dt>住宅宿泊管理業者登録</dt><dd>国土交通大臣（01）第F06325号（有効期間 2026年9月1日〜2031年8月31日）</dd></div>
+          <div><dt>電話番号</dt><dd><a href="tel:09094334441">090-9433-4441</a></dd></div>
+          <div><dt>メール</dt><dd><a href="mailto:backoffice@windwoods-stayble.com">backoffice@windwoods-stayble.com</a></dd></div>
+        </dl>
+        <div class="company-facts-mobile">
+          <section class="company-mobile-license" aria-label="住宅宿泊管理業者登録">
+            <p>住宅宿泊管理業者登録</p>
+            <strong>国土交通大臣（01）<br>第F06325号</strong>
+            <p>有効期間 2026年9月1日〜2031年8月31日</p>
+          </section>
+          <dl class="company-mobile-meta">
+            <div><dt>運営会社</dt><dd>株式会社Stayble</dd></div>
+            <div><dt>代表者</dt><dd>風林 匠真</dd></div>
+            <div class="is-wide"><dt>本社所在地</dt><dd>札幌市中央区南5条西15丁目2-3-503<br>（本社移転予定）</dd></div>
+          </dl>
+          <div class="company-mobile-contact">
+            <a href="tel:09094334441">電話する</a>
+            <a href="mailto:backoffice@windwoods-stayble.com">メールする</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer" id="company">
+  <footer class="site-footer">
     <div class="section-inner footer-grid">
       <div>
         <img class="footer-logo" src="/assets/logo-full.png" alt="WindWoods 株式会社Stayble" width="1000" height="1000" loading="lazy" decoding="async">
@@ -268,7 +328,9 @@
         <p>代表者：風林 匠真</p>
         <p>設立：2025年4月11日</p>
         <p>札幌市中央区南5条西15丁目2-3-503</p>
-        <p>backoffice@windwoods-stayble.com</p>
+        <p>住宅宿泊管理業者登録：国土交通大臣（01）第F06325号</p>
+        <p>電話：<a href="tel:09094334441">090-9433-4441</a></p>
+        <p><a href="mailto:backoffice@windwoods-stayble.com">backoffice@windwoods-stayble.com</a></p>
       </div>
       <div>
         <p><strong>対応エリア</strong></p>
@@ -284,7 +346,7 @@
       <div>
         <p><strong>関連事業</strong></p>
         <p><a href="https://www.stayble.jp" target="_blank" rel="noopener">清掃管理システム Stayble（ステイブル）</a></p>
-        <p><a href="https://minpaku.stayble.jp" target="_blank" rel="noopener">住宅宿泊管理業：申請中</a></p>
+        <p><a href="https://minpaku.stayble.jp" target="_blank" rel="noopener">住宅宿泊管理業（国土交通大臣登録）</a></p>
       </div>
     </div>
   </footer>
