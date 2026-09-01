@@ -14,7 +14,10 @@
 - 1ページ1テーマ。エリアページのtitle/h1にエリア名を必ず入れる。
 
 ## 3. 構造化データ（JSON-LD）
-- トップで **Organization / WebSite / WebPage / Service** を定義する。
+- トップで **LocalBusiness（Organizationの下位型）/ WebSite / WebPage / Service** を定義する。
+- 全6ページのLocalBusinessは、同じ事業者を示す共通`@id`（`https://windwoods-stayble.com/#organization`）で統一する。地域別の支店・店舗として別LocalBusinessを作らない。
+- LocalBusinessの名称・法人名・住所・電話・営業時間・対応エリアは、BUSINESS.mdおよびGoogleビジネスプロフィールと一致させる。
+- 住宅宿泊管理業者登録は`hasCredential`、営業時間は`openingHours`と`openingHoursSpecification`で機械可読にする。
 - 各エリアページは別支店・別店舗を装わず、同一の株式会社Staybleがその地域へ提供する **Service** として定義する。
   - `provider`：トップのOrganizationを`@id`で参照。
   - `areaServed`：そのページの対象エリア（市区町村名）。
