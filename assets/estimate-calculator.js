@@ -1,7 +1,7 @@
 (function () {
   const GOOGLE_ADS_CONVERSION_ID = "AW-18418113981";
   // Google広告で発行後、ラベル文字列だけを設定する（例: "AbCdEfGhIjkLmNoP"）。
-  const GOOGLE_ADS_CONVERSION_LABEL = "";
+  const GOOGLE_ADS_CONVERSION_LABEL = "XRWdCOzB3OscEL27uM5E";
 
   const layouts = {
     "1R": { label: "1R", base: 4200, includedBeds: 2 },
