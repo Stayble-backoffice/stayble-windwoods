@@ -5,7 +5,7 @@
 - 新ドメイン `https://windwoods-stayble.com/` はGitHub Pagesへ正しく接続されている。
 - 旧ドメイン `ww-sapporo-minpaku.com` はWix側の接続案内・404状態で、新ドメインへのサーバー側301リダイレクトを確認できない。
 - 2026年10月1日の再確認でも、`www` あり・なしのHTTPSトップはいずれもHTTP 404。DNSのNSは `ns2.wixdns.net` / `ns3.wixdns.net`、登録事業者はWix。
-- 公開RDAPの登録有効期限は**2026年10月22日**。同日ユーザー提供のWix管理画面でも、有効期限10月22日・自動更新オフ・サイト未接続を確認。旧サイトの契約を戻さず、**ドメイン登録だけ期限前に延長**する。Wixのサイトプラン解約とドメイン契約は別。
+- 公開RDAPの旧登録有効期限は**2026年10月22日**。同日ユーザー提供のWix管理画面でも、有効期限10月22日・自動更新オフ・サイト未接続を確認。その後ユーザーがドメイン登録だけを1年延長し、公開RDAPでも**2027年10月22日**へ更新されたことを確認した。Wixのサイトプラン解約とドメイン契約は別。
 - Gmailフッターの旧リンク問題は設定URLの修正で解決済みだが、検索エンジンや外部サイトが保持する旧URLの移行は別問題。
 
 ## 最低限の転送
@@ -16,6 +16,21 @@
 | `https://www.ww-sapporo-minpaku.com/` | `https://windwoods-stayble.com/sapporo/` | 301 permanent |
 
 旧サイトの他URLは、旧Search Consoleの「ページ」、外部リンク、過去sitemap、アクセス解析から一覧を取得し、内容が最も近い新URLへ1対1で割り当てる。無関係な旧URLをすべてトップへ転送するとsoft 404として扱われる可能性があるため、一覧を確認せず一括転送しない。
+
+2026年10月1日にInternet Archive CDXの200応答履歴から確認できた旧URLは次のとおり。転送用の具体的な設定は `ops/legacy-redirect/_redirects` に置く。
+
+| 旧パス | 対応する新コンテンツ |
+|---|---|
+| `/` | `/sapporo/` |
+| `/お問い合わせ` | `/sapporo/#estimate-reservation` |
+| `/ゴミ` | `/sapporo/#garbage` |
+| `/リネン` | `/sapporo/#linen` |
+| `/他社と比較` | `/sapporo/#prices`（料金の判断材料） |
+| `/会社概要` | `/sapporo/#company` |
+| `/消耗品` | `/sapporo/#consumables` |
+| `/chitose-minpaku-seiso` | `/chitose/` |
+
+この一覧が旧サイトの全URLとは限らない。旧Search Consoleのページ・リンク一覧が取得できたら追加する。
 
 ## 実施方法
 

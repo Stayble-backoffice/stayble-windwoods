@@ -1,0 +1,10 @@
+# WindWoods old domain -> content-equivalent pages on the new domain.
+# Netlify requires URL-encoded Japanese paths here. Keep unknown paths as 404.
+/ https://windwoods-stayble.com/sapporo/ 301!
+/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B https://windwoods-stayble.com/sapporo/#estimate-reservation 301!
+/%E3%82%B4%E3%83%9F https://windwoods-stayble.com/sapporo/#garbage 301!
+/%E3%83%AA%E3%83%8D%E3%83%B3 https://windwoods-stayble.com/sapporo/#linen 301!
+/%E4%BB%96%E7%A4%BE%E3%81%A8%E6%AF%94%E8%BC%83 https://windwoods-stayble.com/sapporo/#prices 301!
+/%E4%BC%9A%E7%A4%BE%E6%A6%82%E8%A6%81 https://windwoods-stayble.com/sapporo/#company 301!
+/%E6%B6%88%E8%80%97%E5%93%81 https://windwoods-stayble.com/sapporo/#consumables 301!
+/chitose-minpaku-seiso https://windwoods-stayble.com/chitose/ 301!

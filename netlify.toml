@@ -1,0 +1,4 @@
+# This repository's main website stays on GitHub Pages.
+# Netlify publishes only the old-domain redirect artifact.
+[build]
+  publish = "ops/legacy-redirect"
