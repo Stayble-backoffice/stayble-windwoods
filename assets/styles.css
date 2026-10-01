@@ -472,6 +472,10 @@ a {
   color: var(--gold-soft);
 }
 
+.locality-mobile-lead {
+  display: none;
+}
+
 .locality-accordion {
   display: none;
 }
@@ -2124,6 +2128,15 @@ a {
 
   .locality-copy {
     display: none;
+  }
+
+  .locality-mobile-lead {
+    display: block;
+    margin: 0;
+    color: #ededed;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.8;
   }
 
   .locality-accordion {
