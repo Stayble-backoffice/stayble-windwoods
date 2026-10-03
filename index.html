@@ -126,7 +126,7 @@
         "isPartOf": { "@id": "https://windwoods-stayble.com/#website" },
         "about": { "@id": "https://windwoods-stayble.com/#service" },
         "primaryImageOfPage": { "@type": "ImageObject", "url": "https://windwoods-stayble.com/assets/og/home.png", "width": 1200, "height": 630 },
-        "dateModified": "2026-09-01",
+        "dateModified": "2026-10-03",
         "inLanguage": "ja-JP"
       },
       {
@@ -176,7 +176,10 @@
           <p class="hero-small">北海道の宿泊を支える<br>“リネンサプライ”付き</p>
           <h1><span>北海道の民泊清掃と、</span><span>リネンを一社に。</span></h1>
           <p class="home-hero-lead">民泊清掃代行・リネン供給・消耗品補充をまとめて相談。札幌・千歳・小樽・北広島・恵庭の物件に対応します。</p>
-          <a class="button" href="#areas">対応エリアを選ぶ</a>
+          <div class="home-hero-actions">
+            <a class="button" href="#areas">対応エリアを選ぶ</a>
+            <a class="button home-hero-contact" href="#quick-contact">まず相談する</a>
+          </div>
         </div>
         <dl class="home-hero-stats">
           <div>
@@ -228,6 +231,43 @@
             <p>西島松・恵み野・島松周辺。民泊清掃とリネンをまとめて相談。</p>
           </a>
         </nav>
+      </div>
+    </section>
+
+    <section class="section quick-contact" id="quick-contact">
+      <div class="section-inner quick-contact-grid">
+        <div class="section-heading">
+          <p class="section-kicker">Quick Inquiry</p>
+          <h2>民泊清掃・リネンを、まず相談する</h2>
+          <p>物件が検討段階でもご相談いただけます。札幌・千歳・小樽・北広島・恵庭の物件について、分かる範囲でお知らせください。</p>
+        </div>
+        <form class="quick-contact-form" data-quick-contact action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="756ca37e-0bf3-48c5-b653-3624c899dbe1">
+          <input type="hidden" name="subject" value="【WindWoods】トップページからの初回相談">
+          <input type="hidden" name="from_name" value="WindWoods トップページ">
+          <input type="hidden" name="form_type" value="初回相談">
+          <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" aria-hidden="true">
+          <label>物件のエリア
+            <select name="area" required>
+              <option value="" selected disabled>選択してください</option>
+              <option>札幌</option><option>千歳</option><option>小樽</option><option>北広島</option><option>恵庭</option>
+              <option>上記の複数エリア・検討中</option>
+            </select>
+          </label>
+          <label>お名前・法人名<input name="name" autocomplete="name" required></label>
+          <label>メールアドレス<input name="email" type="email" autocomplete="email" required></label>
+          <label>ご相談内容
+            <select name="interest" required>
+              <option value="" selected disabled>選択してください</option>
+              <option>清掃・リネンをまとめて相談</option><option>清掃代行について相談</option>
+              <option>リネン供給について相談</option><option>料金・対応エリアを相談</option>
+            </select>
+          </label>
+          <label>物件やご希望について<textarea name="message" rows="4" placeholder="物件の場所や、気になっていることを簡単にお書きください" required></textarea></label>
+          <button class="button" type="submit">相談内容を送信する</button>
+          <p class="quick-contact-status" data-quick-contact-status role="status" aria-live="polite"></p>
+          <p class="quick-contact-note">送信後、担当者が内容を確認してご連絡します。正式な料金は現地調査後に確定します。</p>
+        </form>
       </div>
     </section>
 
@@ -290,6 +330,15 @@
             <span>基本は物件内処理を促し、必要時は回収手数料と事業用ゴミ袋代を分けて扱います。</span>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section home-guide">
+      <div class="section-inner">
+        <p class="section-kicker">Cost Guide</p>
+        <h2>清掃費と、リネンを含む請求額の違いを確認。</h2>
+        <p>1Rの清掃費は4,200円（税込）から。リネン・消耗品・ゴミ回収の利用条件で、1回あたりの請求額は変わります。</p>
+        <a class="button" href="/guide/cleaning-linen-cost/">費用の内訳を見る</a>
       </div>
     </section>
 
@@ -369,13 +418,9 @@
           <a href="/eniwa/">恵庭の民泊清掃はこちら</a>
         </nav>
       </div>
-      <div>
-        <p><strong>関連事業</strong></p>
-        <p><a href="https://www.stayble.jp" target="_blank" rel="noopener">清掃管理システム Stayble（ステイブル）</a></p>
-        <p><a href="https://minpaku.stayble.jp" target="_blank" rel="noopener">住宅宿泊管理業（国土交通大臣登録）</a></p>
-      </div>
     </div>
   </footer>
   <script src="/assets/analytics.js" defer></script>
+  <script src="/assets/quick-inquiry.js" defer></script>
 </body>
 </html>

@@ -379,6 +379,12 @@ a {
 .quick-contact-form .button:disabled { opacity: 0.65; cursor: wait; }
 .quick-contact-status { min-height: 1.5em; margin: 0; color: var(--gold-soft); font-weight: 800; }
 .quick-contact-note { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.guide-link { margin: 22px 0 0; color: var(--gold-soft); font-weight: 800; }
+.guide-link a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.home-guide { border-top: 1px solid var(--line); background: #111; }
+.home-guide h2 { max-width: 780px; font-size: clamp(26px, 3.5vw, 42px); }
+.home-guide p:not(.section-kicker) { max-width: 730px; color: #ddd; line-height: 1.8; }
+.home-guide .button { margin-top: 22px; }
 
 @media (min-width: 980px) {
   .quick-contact-grid { grid-template-columns: 0.9fr 1.1fr; }
@@ -1662,6 +1668,23 @@ a {
   line-height: 1.9;
 }
 
+.home-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.home-hero-actions .button {
+  min-width: 220px;
+  margin-top: 0;
+}
+
+.home-hero-contact {
+  border-color: var(--gold-soft);
+  background: var(--gold-soft);
+  color: #17130a;
+}
+
 .home-hero-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1909,7 +1932,7 @@ a {
   }
 
   .footer-grid {
-    grid-template-columns: 1.35fr 1fr 1fr 1fr;
+    grid-template-columns: 1.35fr 1fr 1fr;
   }
 
   .home-hero-inner {
@@ -2651,6 +2674,11 @@ a {
 
   .home-hero .button {
     width: 100%;
+  }
+
+  .home-hero-actions {
+    display: grid;
+    gap: 10px;
   }
 
   .home-hero-stats {
