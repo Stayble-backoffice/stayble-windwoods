@@ -3,7 +3,22 @@ import fs from "node:fs";
 import vm from "node:vm";
 
 const source = fs.readFileSync(new URL("../assets/estimate-calculator.js", import.meta.url), "utf8");
+const analyticsSource = fs.readFileSync(new URL("../assets/analytics.js", import.meta.url), "utf8");
 const expectedSendTo = "AW-18418113981/XRWdCOzB3OscEL27uM5E";
+const expectedMeasurementId = "G-90WPJ6DVVF";
+
+const gaCalls = [];
+const analyticsWindow = { gtag: (...args) => gaCalls.push(args) };
+new vm.Script(analyticsSource, { filename: "assets/analytics.js" }).runInContext(
+  vm.createContext({ window: analyticsWindow })
+);
+assert.equal(gaCalls[0][0], "config");
+assert.equal(gaCalls[0][1], expectedMeasurementId);
+analyticsWindow.WindWoodsAnalytics.track("generate_lead", { form_type: "quick_inquiry" });
+assert.equal(gaCalls[1][0], "event");
+assert.equal(gaCalls[1][1], "generate_lead");
+assert.equal(gaCalls[1][2].send_to, expectedMeasurementId);
+assert.equal(gaCalls[1][2].form_type, "quick_inquiry");
 
 function createNode(overrides = {}) {
   return {
@@ -45,7 +60,9 @@ class TestFormData {
 
 function createEnvironment(fetchResponse) {
   const conversions = [];
+  const gaEvents = [];
   let fetchCount = 0;
+  let onBookingComplete;
 
   const estimateForm = createNode({
     fields: {
@@ -122,7 +139,14 @@ function createEnvironment(fetchResponse) {
     gtag(...args) {
       conversions.push(args);
     },
-    TimerexCalendar() {}
+    WindWoodsAnalytics: {
+      track(...args) {
+        gaEvents.push(args);
+      }
+    },
+    TimerexCalendar({ onBookingComplete: callback }) {
+      onBookingComplete = callback;
+    }
   };
   const document = {
     querySelector: (selector) => elements[selector] || null,
@@ -149,7 +173,11 @@ function createEnvironment(fetchResponse) {
   return {
     bookingSubmit,
     conversions,
+    gaEvents,
     fetchCount: () => fetchCount,
+    completeBooking() {
+      onBookingComplete?.();
+    },
     submitAsUser() {
       if (bookingSubmit.disabled) {
         return Promise.resolve(false);
@@ -169,6 +197,11 @@ assert.equal(success.conversions.length, 1, "成功時のコンバージョン�
 assert.equal(success.conversions[0][0], "event");
 assert.equal(success.conversions[0][1], "conversion");
 assert.equal(success.conversions[0][2].send_to, expectedSendTo);
+assert.equal(success.gaEvents.filter(([name]) => name === "generate_lead").length, 1);
+assert.equal(success.gaEvents.filter(([name]) => name === "booking_complete").length, 0);
+success.completeBooking();
+success.completeBooking();
+assert.equal(success.gaEvents.filter(([name]) => name === "booking_complete").length, 1);
 
 const failure = createEnvironment({
   ok: false,
@@ -177,6 +210,7 @@ const failure = createEnvironment({
 await failure.submitAsUser();
 assert.equal(failure.fetchCount(), 1, "失敗応答まで送信処理が行われること");
 assert.equal(failure.conversions.length, 0, "送信失敗時はコンバージョンを発火しないこと");
+assert.equal(failure.gaEvents.filter(([name]) => name === "generate_lead").length, 0);
 assert.equal(failure.bookingSubmit.disabled, false, "送信失敗時は再送できること");
 
 const doubleClick = createEnvironment({
@@ -188,6 +222,7 @@ const secondSubmission = doubleClick.submitAsUser();
 await Promise.all([firstSubmission, secondSubmission]);
 assert.equal(doubleClick.fetchCount(), 1, "連打時もフォーム送信は1回であること");
 assert.equal(doubleClick.conversions.length, 1, "連打時もコンバージョン発火は1回であること");
+assert.equal(doubleClick.gaEvents.filter(([name]) => name === "generate_lead").length, 1);
 
 console.log("Conversion tracking tests passed:");
 console.log(`- configured send_to: ${expectedSendTo}`);

@@ -1,6 +1,5 @@
 (function () {
-  // Set this after the WindWoods GA4 web stream has been created.
-  const measurementId = "";
+  const measurementId = "G-90WPJ6DVVF";
   const enabled = /^G-[A-Z0-9]+$/.test(measurementId);
 
   if (enabled && typeof window.gtag === "function") {
