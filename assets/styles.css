@@ -1297,6 +1297,12 @@ a {
   background: #fff;
 }
 
+.timerex-panel a {
+  color: var(--gold-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .completion-panel strong {
   color: var(--gold-soft);
 }

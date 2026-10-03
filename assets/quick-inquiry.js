@@ -5,6 +5,13 @@
   const status = form.querySelector("[data-quick-contact-status]");
   const submitButton = form.querySelector('button[type="submit"]');
   let sent = false;
+  let started = false;
+
+  form.addEventListener("focusin", () => {
+    if (started) return;
+    started = true;
+    window.WindWoodsAnalytics?.track("quick_form_start");
+  });
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -28,6 +35,7 @@
       form.reset();
       status.textContent = "送信しました。担当者が内容を確認してご連絡します。";
       submitButton.textContent = "送信済み";
+      window.WindWoodsAnalytics?.track("generate_lead", { form_type: "quick_inquiry" });
       if (typeof window.gtag === "function") {
         window.gtag("event", "conversion", {
           send_to: "AW-18418113981/XRWdCOzB3OscEL27uM5E"

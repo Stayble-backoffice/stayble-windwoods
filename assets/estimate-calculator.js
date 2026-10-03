@@ -157,6 +157,10 @@
   let lastEstimate = null;
   let lastInput = null;
   let timerexInitialized = false;
+  let lastSubmittedBookingData = null;
+  let bookingCompleted = false;
+  let estimateFormStarted = false;
+  let formalFormStarted = false;
 
   function setBreakdown(rows) {
     breakdownNode.innerHTML = rows.map(([label, value]) => (
@@ -375,7 +379,18 @@
         return;
       }
 
-      root.TimerexCalendar();
+      root.TimerexCalendar({
+        onBookingComplete: () => {
+          if (!lastSubmittedBookingData || bookingCompleted) return;
+          bookingCompleted = true;
+          showCompletion(lastSubmittedBookingData);
+          root.WindWoodsAnalytics?.track("booking_complete", {
+            booking_type: String(lastSubmittedBookingData.get("booking_type") || "")
+          });
+          if (bookingStatus) bookingStatus.textContent = "予約日時が確定しました。確認メールをご確認ください。";
+          completionPanel?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
       timerexInitialized = true;
     };
 
@@ -476,9 +491,13 @@
         bookingSubmit.textContent = "送信済み";
       }
 
+      lastSubmittedBookingData = submitData;
       trackGoogleAdsConversion();
+      root.WindWoodsAnalytics?.track("generate_lead", { form_type: "formal_inquiry" });
       showTimerex();
-      showCompletion(submitData);
+      root.WindWoodsAnalytics?.track("booking_calendar_open", {
+        booking_type: String(submitData.get("booking_type") || "")
+      });
       timerexSection?.scrollIntoView({ behavior: "smooth", block: "start" });
     } catch (error) {
       if (bookingStatus) {
@@ -501,6 +520,15 @@
 
     hasCalculated = true;
     renderEstimate();
+    root.WindWoodsAnalytics?.track("estimate_calculated", {
+      quote_required: Boolean(lastEstimate?.quoteRequired)
+    });
+  });
+
+  form.addEventListener("focusin", () => {
+    if (estimateFormStarted) return;
+    estimateFormStarted = true;
+    root.WindWoodsAnalytics?.track("estimate_form_start");
   });
 
   form.addEventListener("input", () => {
@@ -523,6 +551,7 @@
     }
 
     bookingForm.hidden = false;
+    root.WindWoodsAnalytics?.track("formal_inquiry_open");
     setDefaultCleaningDate();
     syncLinenDetails();
     syncHiddenEstimateFields();
@@ -530,6 +559,11 @@
   });
 
   bookingForm?.addEventListener("change", syncHiddenEstimateFields);
+  bookingForm?.addEventListener("focusin", () => {
+    if (formalFormStarted) return;
+    formalFormStarted = true;
+    root.WindWoodsAnalytics?.track("formal_form_start");
+  });
   bookingForm?.addEventListener("submit", submitBooking);
   setDefaultCleaningDate();
   syncLinenDetails();
