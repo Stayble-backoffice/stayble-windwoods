@@ -17,6 +17,7 @@ const defaultUrls = [
   `https://${host}/otaru/`,
   `https://${host}/kitahiroshima/`,
   `https://${host}/eniwa/`,
+  `https://${host}/guide/cleaning-linen-cost/`,
 ];
 const urlList = process.argv.slice(2).length ? process.argv.slice(2) : defaultUrls;
 
