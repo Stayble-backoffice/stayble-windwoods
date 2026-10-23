@@ -1,5 +1,7 @@
 # README — stayble-windwoods
 
+正本はこのリポジトリの `main`。PC故障時や開発環境の再作成は [復元手順](docs/workspace-recovery.md) を参照してください。Stayble本体とは独立した事業LPで、今回はWindowsで開発を継続します。
+
 WindWoods（民泊・バケーションレンタル清掃管理サービス／運営：株式会社Stayble）の集客LP。
 
 ## 概要

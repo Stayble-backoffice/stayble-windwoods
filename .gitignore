@@ -2,3 +2,6 @@ tmp/
 .audit/
 .DS_Store
 Thumbs.db
+.worktrees/
+.env
+.env.*
